@@ -4,6 +4,7 @@ import analyticsTracker from "./report/analyticsTracker";
 import { config } from "./config";
 
 import ErrorTrace from "./error/ErrorTrace";
+const memeye = require("memeye");
 
 export default class WebMonitor {
   private reportClient: IReportClient;
@@ -35,5 +36,7 @@ export default class WebMonitor {
     //错误监控上报
     const errorTrace = new ErrorTrace();
     errorTrace.run();
+
+    memeye();
   }
 }

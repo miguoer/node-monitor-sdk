@@ -18,6 +18,7 @@
   "author": "huanglin",
   "license": "ISC",
   "devDependencies": {
+    "memeye": "^1.0.3",
     "microbundle": "^0.13.0"
   },
   "dependencies": {
