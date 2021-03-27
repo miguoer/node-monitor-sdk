@@ -1,0 +1,31 @@
+{
+  "name": "node-monitor-sdk",
+  "version": "1.0.0",
+  "description": "Node监控SDK",
+  "source": "src/index.ts",
+  "main": "dist/node-monitor.js",
+  "exports": "dist/node-monitor.modern.js",
+  "module": "dist/node-monitor.module.js",
+  "unpkg": "dist/node-monitor.umd.js",
+  "typings": "typings/index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "api:init": "api-extractor init",
+    "api:run": "api-extractor run --local --verbose",
+    "api:doc": "typedoc --out docs src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huanglin",
+  "license": "ISC",
+  "devDependencies": {
+    "microbundle": "^0.13.0"
+  },
+  "dependencies": {
+    "@microsoft/api-extractor": "^7.13.2",
+    "@types/koa": "^2.13.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/node-fetch": "^2.5.8",
+    "node-fetch": "^2.6.1",
+    "typedoc": "^0.20.30"
+  }
+}
