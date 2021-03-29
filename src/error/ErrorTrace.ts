@@ -19,7 +19,12 @@ export default class ErrorTrace {
     });
   }
 
+  private memoryLeakError() {
+    // Todo 内存泄露上报
+  }
+
   public run() {
     this.globalUnCaughtError();
+    this.memoryLeakError();
   }
 }

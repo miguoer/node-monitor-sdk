@@ -3,9 +3,10 @@
  */
 import { config } from "../config";
 import { AskPriority, ReportMsgType } from "../typings/types";
+import * as Koa from "koa";
 
-function handleHttpError() {
-  return async function (ctx, next) {
+function handleHttpError(): Koa.Middleware {
+  return async function (ctx: Koa.Context, next: () => Promise<any>) {
     try {
       await next();
 
@@ -13,7 +14,7 @@ function handleHttpError() {
         // 发生404错误
         config.reportClient.sendToAnalytics(
           AskPriority.URGENT,
-          "服务404了",
+          JSON.stringify(ctx.request),
           ReportMsgType.NODE_HTTP_ERROR
         );
       }

@@ -1,3 +1,3 @@
 import * as Koa from "koa";
-declare function handleHttpError(): Koa.Middleware;
+declare const handleHttpError: () => Koa.Middleware;
 export default handleHttpError;

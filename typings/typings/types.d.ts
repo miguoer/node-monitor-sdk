@@ -1,3 +1,8 @@
+import * as Koa from "koa";
+export interface IMonitor {
+    reportClient: IReportClient;
+    handleHttpError: Koa.Middleware;
+}
 export interface INavigationTiming {
     fetchTime?: number;
     workerTime?: number;
